@@ -5,24 +5,26 @@
 
 
 
-void my_strcpy(char* e1, const char* e2)
-{
-	assert(e1 != NULL);
-	assert(e2 != NULL);
-	while (*e1++ = *e2++)
-	{
-		;
-	}
-}
-
-int main()
-{
-	char ch1[] = "sadqrqfsfa";
-	char ch2[] = "abcdef";
-	my_strcpy(ch1, ch2);
-	printf("%s\n", ch1);
-	return 0;
-}
+//char* my_strcpy(char* e1, const char* e2)
+//{
+//	assert(e1 != NULL);
+//	assert(e2 != NULL);
+//	char* ret = e1;
+//	while (*e1++ = *e2++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char ch1[] = "sadqrqfsfa";
+//	char ch2[] = "abcdef";
+//	my_strcpy(ch1, ch2);
+//	printf("%s\n", ch1);
+//	return 0;
+//}
 
 //int my_strlen(const char* ch)
 //{
