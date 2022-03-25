@@ -5,7 +5,7 @@ void menu()
 {
 	printf("*******************************\n");
 	printf("**** 1.add          2.del *****\n");
-	printf("**** 3. serch    4.modify *****\n");
+	printf("**** 3.serch    4.modify *****\n");
 	printf("**** 5.show        6.sort *****\n");
 	printf("**** 0.exit               *****\n");
 	printf("*******************************\n");
@@ -13,30 +13,37 @@ void menu()
 
 int main()
 {
-	int input;
+	int input=0;
 	struct pp s;
 	INIT(&s);
 	do
 	{
 		menu();
 		printf("请选择->: ");
-		scanf("%s", input);
+		scanf("%d", &input);
 		switch (input)
 		{
-		case 1:
-			//add();
+		case ADD:
+			add(&s);
 			break;
-		case 2:
+		case DEL:
+			del(&s);
 			break;
-		case 3:
+		case SERCH:
+			serch(&s);
 			break;
-		case 4:
+		case MODIFY:
+			modify(&s);
 			break;
-		case 5:
+		case SHOW:
+			show(&s);
 			break;
-		case 6:
+		case SORT:
+			qsort(s.con,s.size,sizeof(s.con[0]),sort_by_name);
+			printf("排序成功\n");
 			break;
-		case 0:
+		case EXIT:
+			printf("退出成功\n");
 			break;
 		default:
 			printf("输入错误\n");
