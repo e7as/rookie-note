@@ -45,3 +45,5 @@ void add_list(list* op);
 
 //展示线性表
 void show_list(list* op);
+
+void addition_list(list* op, list*np, list* cp);
