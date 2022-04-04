@@ -47,4 +47,7 @@ linklist head_inset(linklist l,int n);
 
 //尾插法
 linklist final_insert(linklist l,int n);
+
+//带尾指针循环链表的合并
+linklist connect(linklist l, linklist p);
 #endif

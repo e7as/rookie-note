@@ -185,3 +185,14 @@ linklist final_insert(linklist l, int n)
 	}
 	return l;
 }
+
+//带尾指针循环链表的合并
+linklist connect(linklist l, linklist p)
+{
+	linklist d = NULL;
+	d = l->next;
+	l->next = p->next->next;
+	free(p->next);
+	p->next = d;
+	return p;
+}
