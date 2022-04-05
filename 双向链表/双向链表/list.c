@@ -138,3 +138,30 @@ int delete_linklist(linklist l, int i)
 	}
 	return 1;
 }
+
+//Á´±íÅÅÐò
+void qsort_1(linklist l)
+{
+	int i = 0;
+	linklist p = l->next;
+	linklist pp = l->next;
+	int count = 1;
+	while (pp->next)
+	{
+		pp=pp->next;
+		count++;
+	}
+	for (i = 0; i < count - 1; i++)
+	{
+		if (p->c.a > p->next->c.a)
+		{
+			p->last->next = p->next;
+			p->next->last = p->last;
+			p->last = p->next;
+			p->next = p->next->next;
+			p->last->next = p;
+		}
+		else
+			p = p->next;
+	}
+}

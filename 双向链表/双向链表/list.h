@@ -41,4 +41,7 @@ int insert(linklist l, int i,data cc);
 
 //Ë«ÏòÁ´±íµÄÉ¾³ı
 int delete_linklist(linklist l, int i);
+
+//Á´±íÅÅĞò
+void qsort_1(linklist l);
 #endif
