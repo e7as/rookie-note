@@ -44,4 +44,10 @@ int delete_linklist(linklist l, int i);
 
 //链表排序
 void qsort_1(linklist l);
+
+//合并有序链表
+linklist merge_1(linklist l, linklist k);
+
+//打印链表
+void print1(linklist l);
 #endif

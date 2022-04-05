@@ -165,3 +165,49 @@ void qsort_1(linklist l)
 			p = p->next;
 	}
 }
+
+//合并有序链表
+linklist merge_1(linklist l, linklist k)
+{
+	linklist p = NULL;
+	linklist pp = NULL;
+	linklist gg = NULL;
+	pp = l;
+	l = l->next;
+	k = k->next;
+	p = k;
+	while (l && k)
+	{
+		if (p->c.a < l->c.a)
+		{
+			k = k->next;
+			l->last->next = p;
+			p->next = l;
+			p->last = l->last;
+			l->last = p;
+			p = k;
+		}
+		else
+			gg = l;
+			l = l->next;
+	}
+	if (k == NULL)
+		return pp;
+	else
+	{
+		gg->next = k;
+		k->last = gg;
+		return pp;
+	}
+}
+
+//打印链表
+void print1(linklist l)
+{
+	l = l->next;
+	while (l)
+	{
+		printf("%-5d%-5d\n", l->c.a, l->c.b);
+		l = l->next;
+	}
+}
