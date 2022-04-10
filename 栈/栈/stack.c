@@ -65,7 +65,7 @@ void pop1(stack* l,int* a)
 }
 
 //³õÊ¼»¯Á´Õ»
-linklist ini_linklist(linklist l)
+linklist ini_linklist1(linklist l)
 {
 	l = (linklist)malloc(sizeof(lnode));
 	l->next = NULL;
@@ -84,10 +84,8 @@ int emp_linklist(linklist l)
 int lengthe_linklist(linklist l)
 {
 	int count = 0;
-	l = l->next;
-	while (l)
+	while (l = l->next)
 	{
-		l->next;
 		count++;
 	}
 	return count;
@@ -121,20 +119,26 @@ void des_linklist(linklist* l)
 }
 
 //Á´Õ»µÄÈëÕ»
-void pull_linklist(linklist* l, int a)
+linklist pull_linklist(linklist l, int a)
 {
 	linklist p = NULL;
-	p = ini_linklist(p);
+	p = ini_linklist1(p);
 	p->b = a;
-	p->next = *l;
-	(*l) = p;
+	p->next = l;
+	l = p;
+	return l;
 }
 
 //Á´Õ»µÄ³öÕ»
 int pop_linklist(linklist* l)
 {
+	int c = 0;
+	if (!(*l)->next)
+		return -1;
 	linklist p = *l;
 	*l = p->next;
-	return p->b;
+	c = p->b;
+	free(p);
+	return c;
 }
 

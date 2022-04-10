@@ -42,7 +42,7 @@ typedef struct linklist
 }lnode,*linklist;
 
 //³õÊ¼»¯Á´Õ»
-linklist ini_linklist(linklist l);
+linklist ini_linklist1(linklist l);
 
 //ÅĞ¶ÏÁ´Õ»ÊÇ·ñÎª¿Õ,0Îª¿Õ£¬1Îª·Ç¿Õ
 int emp_linklist(linklist);
@@ -57,7 +57,7 @@ void clear_linklist(linklist l);
 void des_linklist(linklist* l);
 
 //Á´Õ»µÄÈëÕ»
-void pull_linklist(linklist* l, int a);
+linklist pull_linklist(linklist l, int a);
 
 //Á´Õ»µÄ³öÕ»
 int pop_linklist(linklist* l);
