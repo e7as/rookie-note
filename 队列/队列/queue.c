@@ -18,10 +18,10 @@ int length_queue(queue* p)
 //入队算法
 void enqueue(queue* p,int a)
 {
-	if ((p->rear + 1) % 6 == p->front)
+	if ((p->rear + 1) % MAXQSIZE == p->front)
 		return;
 	p->l[p->rear] = a;
-	p->rear = (p->rear+1) % 6;
+	p->rear = (p->rear+1) % MAXQSIZE;
 }
 
 //出队算法
@@ -69,7 +69,8 @@ void en_linklist(linkqueue* p,int a)
 	l = (linklist)malloc(sizeof(lnode));
 	l->next = NULL;
 	l->c = a;
-	p->rear->next = l;
+	p->rear->next = l; 
+	p->rear = l;
 }
 
 //出队列
@@ -78,7 +79,7 @@ void de_linklist(linkqueue* p)
 	linklist l = p->front->next;
 	if (p->front == p->rear)
 		return;
-	p->front->next = p->front->next->next;
+	p->front->next = l->next;
 	if (p->rear == l)
 		p->rear = p->front;
 	free(l);
