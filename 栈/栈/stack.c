@@ -133,9 +133,11 @@ linklist pull_linklist(linklist l, int a)
 int pop_linklist(linklist* l)
 {
 	int c = 0;
-	if (!(*l)->next)
-		return -1;
 	linklist p = *l;
+	if (!(*l)->next)
+	{
+		return -1;
+	}
 	*l = p->next;
 	c = p->b;
 	free(p);
