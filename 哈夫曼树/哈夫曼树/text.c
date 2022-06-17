@@ -4,7 +4,9 @@
 int main()
 {
 	hftree cc = NULL;
+	hfcode zz = NULL;
 	createhftree(&cc);
-	printf("%d\n", (cc+1)->weight);
+	geth_fcode(cc,&zz);
+	input_hfcode(zz);
 	return 0;
 }

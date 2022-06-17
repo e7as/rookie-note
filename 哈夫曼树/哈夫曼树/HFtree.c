@@ -1,6 +1,19 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"HFtree.h"
 
+//初始化判断数组
+static void ini_jug(char zz[MAXSIZE/2])
+{
+	int i = 0;
+	for (i = 0; i < MAXSIZE/2 ; i++)
+	{
+		if (i < MAXSIZE/2-1)
+			zz[i] = '2';
+		else
+			zz[i] = '\0';
+	}
+}
+
 //找根权重的最小值和次小值
 static void select(hftree* h, int j, hftree* min, hftree* smin)
 {
@@ -79,3 +92,53 @@ void createhftree(hftree* h)
 
 }
 
+//获得哈夫曼编码
+void geth_fcode(hftree h, hfcode* hf)
+{
+	hftree k = NULL;
+	int tt = 0;
+	int j = 0;
+	int i = 0;
+	*hf =(hfcode)malloc(sizeof(hfnode)*(MAXSIZE/2));
+	char zz[MAXSIZE/2];
+	for (i = 1; i <= MAXSIZE/2; i++)//找每个叶子节点的哈夫曼编码
+	{
+		ini_jug(zz);//初始化判断数组,判断数组最后一位存'\0'，其他存2
+		j = strlen(zz);//判断数组倒排序
+		k = &h[i];
+		tt = i;
+		while (k->parent != 0)//直到判断到根节点结束
+		{
+			if (k->parent != 0)//如果不是根节点，就找此节点的双亲节点
+			{
+				k =&h[k->parent];
+				if (tt == k->lchild)//如果此节点是其双亲节点的左孩子，记录0，如果是右孩子记录1
+				{
+					zz[--j] = '0';
+				}
+				else
+				{
+					zz[--j] = '1';
+				}
+				tt = k - h;
+			}
+		}
+		strcpy(((*hf)+i-1)->hafcode, zz);//将判断数组的值拷贝给哈夫曼代码数组
+	}
+}
+
+//输出哈夫曼编码
+void input_hfcode(hfcode hf)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < MAXSIZE/2; i++)
+	{
+		for (j = 0; j < MAXSIZE/2-1; j++)
+		{
+			if ((hf+i)->hafcode[j] != '2')
+				printf("%c", (hf+i)->hafcode[j]);
+		}
+		printf("\n");
+	}
+}
