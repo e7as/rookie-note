@@ -1,0 +1,5 @@
+﻿  text.c
+  tree.c
+  正在生成代码...
+D:\VS c++ 2013\rookie_note\rookie-note\二叉排序树\二叉排序树\tree.c(63): warning C4715: “search1_bitree”: 不是所有的控件路径都返回值
+  二叉排序树.vcxproj -> D:\VS c++ 2013\rookie_note\rookie-note\二叉排序树\x64\Debug\二叉排序树.exe
