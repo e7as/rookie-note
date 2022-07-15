@@ -1,8 +1,8 @@
 ﻿  HFtree.c
-D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(87,27): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
-D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(88,28): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
-D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(107,7): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
-D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(123,12): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(88,27): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(89,28): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(108,7): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\哈夫曼树\HFtree.c(124,12): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
   text.c
   正在生成代码...
   哈夫曼树.vcxproj -> D:\VS c++ 2013\rookie_note\rookie-note\哈夫曼树\x64\Debug\哈夫曼树.exe

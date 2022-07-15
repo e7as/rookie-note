@@ -73,12 +73,13 @@ void createhftree(hftree* h)
 	hftree min = NULL;
 	hftree smin = NULL;
 	int i = 0;
+	int gg = 0;
 	int n = MAXSIZE / 2;//初始根数量
 	*h = (hftree)malloc(sizeof(htnode)*MAXSIZE);//创建一个哈夫曼树数组。
 	ini_hftree(h);//初始化哈夫曼树
 	for (i = 1; i <= n; i++)
 	{
-		scanf("%d", &(*(h)+i)->weight);//给初始根加上权重。
+		gg=scanf("%d", &(*(h)+i)->weight);//给初始根加上权重。
 	}
 	for (i = n+1; i <MAXSIZE; i++)//补全哈夫曼树,运行n-1次（n为初始森林数目）
 	{
