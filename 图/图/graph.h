@@ -45,5 +45,11 @@ typedef struct
 
 //创立无向网（邻接表）
 void create_gra(grophnode* g);
+
+//深度优先搜索（临界矩阵）
+void dfs(graph* g, int a,int path[6]);
+
+//深度优先搜索（邻接表）
+void dfs_list(grophnode* g, int a, int path[6],sidenode* l);
 #endif // __NUSH__
 

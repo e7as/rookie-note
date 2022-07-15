@@ -72,7 +72,7 @@ static void search_underline(int* v, char* g,graph* bb)
 	}
 }
 
-//创建无向网
+//创建无向网(邻接矩阵)
 void create_graph(graph* g)
 {
 	int gg = 0;
@@ -93,7 +93,7 @@ void create_graph(graph* g)
 		gg=scanf("%c", &(g->vertax[i]));
 	}
 	ini_graph(g);//初始化邻接矩阵
-	for (i = 0; i < g->vernum; i++)
+	for (i = 0; i < g->snum; i++)
 	{
 		while ((ch = getchar()) != '\n' && ch != EOF)//清空缓存区
 		{
@@ -131,3 +131,35 @@ void create_gra(grophnode* g)
 		insert(v2,v1, g, w);
 	}
 }
+
+//深度优先搜索（邻接矩阵）
+void dfs(graph* g,int a,int path[6])
+{
+	int i = 0;
+	path[a] = 1;//记录已经走过的节点
+	printf("%d", a);
+	for (i = 0; i < g->vernum; i++)//对第a个节点进行遍历，寻找a节点的边
+	{
+		if (path[i] == 0 && g->side[a][i] != MAXINT)//若此节点与另一节点存在边，且另一节点没有被记录，则对另一节点bfs
+			dfs(g, i,path);
+	}
+}
+
+//深度优先搜索（邻接表）
+void dfs_list(grophnode* g, int a, int path[6],sidenode* l)
+{
+	path[a] = 1;//记录此节点
+	printf("%d", a);
+	while (l)
+	{
+		if (path[l->adjver] != 1)//若l指向的边的另一节点未被记录，dfs另一节点
+		{
+			dfs_list(g, l->adjver, path,g->v[l->adjver].next);
+		}
+		l = l->nextside;//l指向下一条边
+	}
+	
+}
+
+
+
