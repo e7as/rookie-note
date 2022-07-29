@@ -61,3 +61,52 @@ bitree search1_bitree(bitree b, int c)
 	else
 		search1_bitree(b->lchild,c);
 }
+
+//二叉排序树的插入
+void insert_bitree(bitree b, int c)
+{
+	bitree l = NULL;
+	while (b)
+	{
+		if (c == b->a)
+			return;
+		else if (c > b->a)
+		{
+			if (!b->rchild)
+			{
+				l = (bitree)malloc(sizeof(binode));
+				b->rchild = l;
+				l->a = c;
+				l->lchild = NULL;
+				l->rchild = NULL;
+			}
+			else
+			{
+				b = b->rchild;
+				continue;
+			}
+		}
+		else if (c < b->a)
+		{
+			if (!b->lchild)
+			{
+				l = (bitree)malloc(sizeof(binode));
+				b->lchild = l;
+				l->a = c;
+				l->lchild = NULL;
+				l->rchild = NULL;
+			}
+			else
+			{
+				b = b->lchild;
+				continue;
+			}
+		}
+	}
+}
+
+//二叉排序树删除节点
+void delete_bitree(bitree b, int c)
+{
+
+}
