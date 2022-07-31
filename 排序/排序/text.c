@@ -8,7 +8,10 @@ int main()
 	//insert_sort(&cc);
 	//di_inset_sort(&cc);
 	//shell_sort(&cc, arr, sizeof(arr)/sizeof(arr[0]));
-	pop_sort(&cc);
+	//pop_sort(&cc);
+	//fast_sort(&cc, 1, cc.length);
+	//ez_select_sort(&cc);
+
 	output_sort(&cc);
 	return 0;
 }

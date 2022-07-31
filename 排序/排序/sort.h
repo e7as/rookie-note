@@ -34,7 +34,14 @@ void shell_sort(Sqlist* s,int dlat[],int t);
 //冒泡排序
 void pop_sort(Sqlist* s);
 
+//快速排序
+void fast_sort(Sqlist* s,int low ,int high);
 
+//快速排序分左右子表
+int partition_fast(Sqlist* s, int low, int high);
+
+//简单选择排序
+void ez_select_sort(Sqlist* s);
 
 
 

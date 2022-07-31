@@ -127,3 +127,72 @@ void pop_sort(Sqlist* s)
 		}
 	}
 }
+
+//快速排序
+void fast_sort(Sqlist* s,int low,int high)
+{
+	int center = 0;
+	if (low < high)
+	{
+		center = partition_fast(s, low, high);
+		fast_sort(s, low, center - 1);
+		fast_sort(s, center + 1, high);
+	}
+}
+
+//快速排序分左右子表
+int partition_fast(Sqlist* s, int low, int high)
+{
+	int i = 0;
+	int flag = 1;
+	s->r[0].Key = s->r[low].Key;
+	while (low < high)
+	{
+		if (flag == 1)
+		{
+			if (s->r[high].Key <= s->r[0].Key)
+			{
+				flag = 2;
+				s->r[low++].Key = s->r[high].Key;
+			}
+			else
+				high--;
+		}
+		else if (flag == 2)
+		{
+			if (s->r[low].Key > s->r[0].Key)
+			{
+				flag = 1;
+				s->r[high--].Key = s->r[low].Key;
+			}
+			else
+				low++;
+		}
+	}
+	s->r[low].Key = s->r[0].Key;
+	return low;
+}
+
+//简单选择排序
+void ez_select_sort(Sqlist* s)
+{
+	int a = 0;
+	int i = 0;
+	int j = 0;
+	for (i = 1; i < s->length; i++)
+	{
+		a = i;
+		s->r[0].Key = s->r[i].Key;
+		for (j = i + 1; j <= s->length; j++)
+		{
+			if (s->r[j].Key < s->r[0].Key)
+			{
+				a = j;
+				s->r[0].Key = s->r[j].Key;
+			}
+		}
+		s->r[a].Key = s->r[i].Key;
+		s->r[i].Key = s->r[0].Key;
+	}
+}
+
